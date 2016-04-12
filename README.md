@@ -1,8 +1,6 @@
 # SlhashSDK for Android
 
-#### Features
 
-[TODO]
 
 #### Getting Started
 
@@ -25,4 +23,34 @@ If you are developing an app for an organization registered on Slhash, you can s
 ```
 Slhash.sharedInstance().setOrganization(ORGANIZATION_CODE);
 ```
+
+###### Login on Slhash
+
+###### Start and stop the Twitter stream
+
+The SDK uses and includes the Fabric library, so it will be automatically available also for your app. In order to login on Slhash you need to perform the Twitter login first. The `SHAuthenticationManager` takes care of the login on Twitter and Slhash. 
+
+```
+SHAuthenticationManager slhashAuthenticationManager = new SHAuthenticationManager(this);
+slhashAuthenticationManager.setListener(this);
+```
+
+You can choose if use the Fabric's `TwitterLoginButton` and execute the login with `SHAuthenticationManager.loginWithButton(TwitterLoginButton twitterLoginButton)` or if use a custom button and use the method `SHAuthenticationManager.login(Activity activity)`.
+
+```
+twitterLoginButton = (TwitterLoginButton) findViewById(R.id.twitter_login_button);
+slhashAuthenticationManager.loginWithButton(twitterLoginButton);
+```
+
+```
+loginButton = (Button) findViewById(R.id.login_button);
+		myLoginButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				slhashAuthenticationManager.login(LoginActivity.this);
+			}
+		});
+```
+
+
 
