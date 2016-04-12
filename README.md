@@ -106,14 +106,13 @@ Slhash.sharedInstance().unregisterListener(listener);
 #### Model
 
 * `SHUser`
-* `SHIdentiy`
 * `SHTwitterUser`
 * `SHServiceContainer`
 	* `SHService`
 	* `SHCommand`
 	* `SHParameter`
 * `SHTransaction`
-* `SHTransactionItem`
+	* `SHTransactionItem`
 
 #### Services
 
