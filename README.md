@@ -1,1 +1,3 @@
-# SlhashSDK-Android
+# SlhashSDK for Android
+
+# Getting Started
