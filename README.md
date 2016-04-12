@@ -99,10 +99,21 @@ Slhash.sharedInstance().registerListener(listener);
 ```
 Slhash.sharedInstance().unregisterListener(listener);
 ```
+#### Slhash Syntax
+
+[TODO]
 
 #### Model
 
-[TODO]
+* `SHUser`
+* `SHIdentiy`
+* `SHTwitterUser`
+* `SHServiceContainer`
+⋅⋅* `SHService`
+⋅⋅* `SHCommand`
+⋅⋅* `SHParameter`
+* `SHTransaction`
+* `SHTransactionItem`
 
 #### Services
 
