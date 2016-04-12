@@ -25,14 +25,34 @@ Slhash.sharedInstance().setOrganization(ORGANIZATION_CODE);
 ```
 #### Login on Slhash
 
-The SDK uses and includes the Fabric library, so it will be automatically available also for your app. In order to login on Slhash you need to perform the Twitter login first. The `SHAuthenticationManager` takes care of the login on Twitter and Slhash. 
+The SDK uses and includes the Fabric library, so it will be automatically available also for your app. In order to login on Slhash you need to perform the Twitter login first. The `SHAuthenticationManager` takes care of the login on Twitter and Slhash. You have to implement the `SHAuthenticationManagerListener` in order to be notified when an event occurs (such us for example when the login has been succesfully executed).
 
 ```
 SHAuthenticationManager slhashAuthenticationManager = new SHAuthenticationManager(this);
-slhashAuthenticationManager.setListener(this);
+slhashAuthenticationManager.setListener(new SHAuthenticationManagerListener() {
+	@Override
+	public void willLogIn() {
+		// Login process has started.
+	}
+
+	@Override
+	public void didLoggedIn(SHSession session) {
+		// Succesfully logged in, store the session and enter the app.
+	}
+
+	@Override
+	public void didLoggedOut() {
+		// Succesfully logged out, clear the session and exit the app.
+	}
+
+	@Override
+	public void didFailLoginWithError(Exception error) {
+		// Failed to log in, manage the error.
+	}
+});
 ```
 
-You can choose if use the Fabric's `TwitterLoginButton` and execute the login with `SHAuthenticationManager.loginWithButton(TwitterLoginButton twitterLoginButton)` or if use a custom button and use the method `SHAuthenticationManager.login(Activity activity)`.
+You can choose beetween useing the Fabric's `TwitterLoginButton` and a custom button to execute the login.
 
 ```
 twitterLoginButton = (TwitterLoginButton) findViewById(R.id.twitter_login_button);
