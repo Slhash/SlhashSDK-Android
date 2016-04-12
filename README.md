@@ -100,4 +100,24 @@ Slhash.sharedInstance().registerListener(listener);
 Slhash.sharedInstance().unregisterListener(listener);
 ```
 
+#### Model
+
+[TODO]
+
+#### Registry Services
+
+[TODO]
+
+#### User Services
+
+[TODO]
+
+#### Twitter Services
+
+[TODO]
+
+#### Storage
+
+[TODO]
+
 
