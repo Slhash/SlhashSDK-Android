@@ -81,3 +81,23 @@ Slhash.sharedInstance().startStream();
 Slhash.sharedInstance().stopStream();
 ```
 
+#### Listen for Slhash updates and events
+
+By implementing and registering an `SHEventsListener` your app will be notified about transaction update events or when the session is expired. You can register as many listener as you want.
+
+```
+public interface SHEventsListener {
+	void onSlhashTransactionUpdated(SHTransaction transaction, SHTweet tweet);
+	void onSlhashSessionExpired();
+}
+```
+
+```
+Slhash.sharedInstance().registerListener(listener);
+```
+
+```
+Slhash.sharedInstance().unregisterListener(listener);
+```
+
+
