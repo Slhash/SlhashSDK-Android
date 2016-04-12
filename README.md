@@ -71,3 +71,13 @@ loginButton = (Button) findViewById(R.id.login_button);
 
 #### Start and stop the Twitter stream
 
+Slhas uses the Twitter user stream in order to get updates. You can start and stop it easely.
+
+```
+Slhash.sharedInstance().stopStream();
+```
+
+```
+Slhash.sharedInstance().stopStream();
+```
+
