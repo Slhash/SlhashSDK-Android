@@ -104,15 +104,17 @@ Slhash.sharedInstance().unregisterListener(listener);
 
 [TODO]
 
-#### Registry Services
+#### Services
+
+###### Registry Services
 
 [TODO]
 
-#### User Services
+###### User Services
 
 [TODO]
 
-#### Twitter Services
+###### Twitter Services
 
 [TODO]
 
