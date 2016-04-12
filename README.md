@@ -101,32 +101,51 @@ Slhash.sharedInstance().unregisterListener(listener);
 ```
 #### Slhash Syntax
 
-[TODO]
+SlHash uses a @,#, / triplet to specify command, actions, replies and transaction requests over ordinary Twitter messages. Ordinary text is intermixed with Twitter standard notations like @ and # and SlHash characteristic notation, that is  /. 
+
+A SlHash message is composed by the following parts:
+* source: it is implicitly defined;
+* destination: it should appear in text but it could be implicitly defined;
+* type of message: it is defined on the receive side and must be specified at the sending end;
+* text: the actual text that follow the SlHash specification; 
+* image: can be  optionally attached to a message and can contain a QRCode used to share a larger amount of data;
+* options: define specific characteristics of the message.
+
+A special option is the 4-hex code added at the end of each message to make it unique between a sender and  a receiver on Twitter.
+
+The service syntax definition is
+* `#<service>`
+* if not defined a default behavior is invoked, ordinarily a #INFO service
+
+The command syntax definition is:
+* `/<command>`
+* `/<command>=<value>` (`<param>` is implicit)
+* `/<command>[=<param>:<value>[+<param1>:<value1>+…+<paramN>:<valueN>]]`
+* `/<param>:<value>` (`<command>` is implicit)
+* `/:<value>` (`<param>` and `<command>` are implicit)
+* if not defined a default behavior is invoked, ordinarily a /info command
+
+The `/#<command>=<value>` syntax  is left for SlHash system related communication (i.e. /#qr, /#cqr, /#app).
+
+```
+@SlhashOwner #SERVICE /command +param1=value1 +param2=value2 /#opt
+```
 
 #### Model
 
-* `SHUser`
-* `SHTwitterUser`
-* `SHServiceContainer`
-	* `SHService`
-	* `SHCommand`
-	* `SHParameter`
+* `SHUser`: it rapresents a Slhash user (standard or owner).
+* `SHTwitterUser`: it rapresents the Twitter user connected to a Slhash user.
+* `SHServiceContainer`: it rapresents the service container structure defined for an owner.
+	* `SHService`: 
+	* `SHCommand`:
+	* `SHParameter`:
 * `SHTransaction`
 	* `SHTransactionItem`
 
 #### Services
 
-###### Registry Services
+Some of the [Slhash Rest APIs](http://slhash.ennova-research.com/documentation/api/service/index.html) are integrated in the SDK. `SHUserService` allows you to retrieve the user profile
 
-[TODO]
-
-###### User Services
-
-[TODO]
-
-###### Twitter Services
-
-[TODO]
 
 #### Storage
 
