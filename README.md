@@ -23,10 +23,7 @@ If you are developing an app for an organization registered on Slhash, you can s
 ```
 Slhash.sharedInstance().setOrganization(ORGANIZATION_CODE);
 ```
-
-###### Login on Slhash
-
-###### Start and stop the Twitter stream
+#### Login on Slhash
 
 The SDK uses and includes the Fabric library, so it will be automatically available also for your app. In order to login on Slhash you need to perform the Twitter login first. The `SHAuthenticationManager` takes care of the login on Twitter and Slhash. 
 
@@ -52,5 +49,5 @@ loginButton = (Button) findViewById(R.id.login_button);
 		});
 ```
 
-
+#### Start and stop the Twitter stream
 
