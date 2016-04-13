@@ -7,7 +7,7 @@
 ###### Integrate the SDK
 
 ```
-compile 'com.slhash.sdk:SlhashSDK:1.0.0'
+compile 'com.slhash.sdk:slhash-sdk:1.0.0'
 ```
 
 ###### Setup the SDK
