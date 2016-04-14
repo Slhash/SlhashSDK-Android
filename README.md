@@ -75,12 +75,12 @@ slhashAuthenticationManager.loginWithButton(twitterLoginButton);
 
 ```
 loginButton = (Button) findViewById(R.id.login_button);
-		myLoginButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				slhashAuthenticationManager.login(LoginActivity.this);
-			}
-		});
+myLoginButton.setOnClickListener(new View.OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		slhashAuthenticationManager.login(LoginActivity.this);
+	}
+});
 ```
 
 #### Start and stop the Twitter stream
