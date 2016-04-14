@@ -12,15 +12,15 @@ Update your project’s build.gradle script to include the Maven repository and 
 repositories {
 	// Others dependencies...
 	
-    	maven { url "https://dl.bintray.com/slhash/maven" }
+	maven { url "https://dl.bintray.com/slhash/maven" }
 }
 
 dependencies {
-    	// Others dependencies...
+	// Others dependencies...
     
-    	compile ('com.slhash.sdk:slhash-sdk:1.0.0') {
+	compile ('com.slhash.sdk:slhash-sdk:1.0.0') {
         	transitive = false
-    	}
+	}
 }
 ```
 
