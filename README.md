@@ -6,22 +6,21 @@
 
 ###### Integrate the SDK
 
-Add to your app build.gradle file
+Update your project’s build.gradle script to include the Maven repository and the SDK dependency as below.
 
 ```
 repositories {
-    maven {
-        url "https://dl.bintray.com/slhash/maven"
-    }
+	// Others dependencies...
+	
+    	maven { url "https://dl.bintray.com/slhash/maven" }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
+    	// Others dependencies...
     
-    compile ('com.slhash.sdk:slhash-sdk:1.0.0') {
-        transitive = false
-    }
+    	compile ('com.slhash.sdk:slhash-sdk:1.0.0') {
+        	transitive = false
+    	}
 }
 ```
 
