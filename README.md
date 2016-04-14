@@ -6,8 +6,23 @@
 
 ###### Integrate the SDK
 
+Add to your app build.gradle file
+
 ```
-compile 'com.slhash.sdk:slhash-sdk:1.0.0'
+repositories {
+    maven {
+        url "https://dl.bintray.com/slhash/maven"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    
+    compile ('com.slhash.sdk:slhash-sdk:1.0.0') {
+        transitive = false
+    }
+}
 ```
 
 ###### Setup the SDK
